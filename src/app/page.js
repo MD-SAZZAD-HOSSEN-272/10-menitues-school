@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Navbar from "./Components/Navbar";
 import HeroSection from "./Components/HeroSection";
+import StudyPrograms from "./Components/StudyPrograms";
+import EnglishCoursesSection from "./Components/EnglishCoursesSection";
+import EnglishCoursesHero from "./Components/EnglishCoursesHero";
 
 export default function Home() {
   return (
@@ -9,7 +12,14 @@ export default function Home() {
         <Navbar></Navbar>
       </nav>
       <main>
-          <HeroSection></HeroSection>
+          
+          <StudyPrograms></StudyPrograms>
+          <section>
+            <EnglishCoursesSection></EnglishCoursesSection>
+          </section>
+          <section>
+            <EnglishCoursesHero></EnglishCoursesHero>
+          </section>
       </main>
       <footer>
         this is footer
