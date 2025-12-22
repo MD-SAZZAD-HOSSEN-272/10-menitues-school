@@ -4,6 +4,7 @@ import HeroSection from "./Components/HeroSection";
 import StudyPrograms from "./Components/StudyPrograms";
 import EnglishCoursesSection from "./Components/EnglishCoursesSection";
 import EnglishCoursesHero from "./Components/EnglishCoursesHero";
+import TrySomethink from "./Components/TrySomethink";
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
           </section>
           <section>
             <EnglishCoursesHero></EnglishCoursesHero>
+          </section>
+          <section>
+            <TrySomethink></TrySomethink>
           </section>
       </main>
       <footer>
