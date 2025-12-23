@@ -1,4 +1,5 @@
-// components/StudyPrograms.jsx
+
+"use client";
 
 const programs = [
   {
@@ -44,55 +45,122 @@ const programs = [
 
 export default function StudyPrograms() {
   return (
-    <section className="relative bg-black py-20 overflow-hidden">
-      {/* Header */}
-      <div className="text-center mb-14">
-        <h1 className="text-4xl md:text-5xl font-bold text-white">
-          শেখা হোক <span className="text-orange-400">আনন্দে!</span>
-        </h1>
-        <p className="mt-3 text-gray-300">
-          এক জায়গায় স্কুল ও কলেজের সম্পূর্ণ প্রস্তুতি!
-        </p>
-      </div>
+    <div>
+      <section className="relative bg-black py-20 overflow-hidden">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h1 className="text-4xl md:text-5xl font-bold text-white">
+            শেখা হোক <span className="text-orange-400">আনন্দে!</span>
+          </h1>
+          <p className="mt-3 text-gray-300">
+            এক জায়গায় স্কুল ও কলেজের সম্পূর্ণ প্রস্তুতি!
+          </p>
+        </div>
 
-      {/* Cards */}
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4">
-        {programs.map((item, index) => (
-          <div
-            key={index}
-            className="bg-zinc-900 border border-zinc-700 rounded-2xl p-4 hover:scale-105 transition-transform duration-300"
-          >
+        {/* Cards */}
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4">
+          {programs.map((item, index) => (
             <div
-              className={`h-32 rounded-xl flex flex-col items-center justify-center bg-gradient-to-br ${item.gradient}`}
+            onClick={() => document.getElementById("my_modal_3").showModal()}
+              key={index}
+              className="bg-zinc-900 cursor-pointer border border-zinc-700 rounded-2xl p-4 hover:scale-105 transition-transform duration-300"
             >
-              <span className="text-3xl">{item.emoji}</span>
-              <h3 className="mt-2 text-lg font-bold text-white">
-                {item.title}
-              </h3>
-            </div>
-
-            <p className="mt-3 text-center text-sm text-gray-200">
-              {item.subtitle}
-            </p>
-
-            {item.badge && (
-              <div className="mt-3 flex justify-center">
-                <span className="text-xs bg-red-600 text-white px-3 py-1 rounded-full">
-                  {item.badge}
-                </span>
+              <div
+                className={`h-32 rounded-xl flex flex-col items-center justify-center bg-gradient-to-br ${item.gradient}`}
+              >
+                <span className="text-3xl">{item.emoji}</span>
+                <h3 className="mt-2 text-lg font-bold text-white">
+                  {item.title}
+                </h3>
               </div>
-            )}
-          </div>
-        ))}
-      </div>
 
-      {/* Button */}
-      <div className="mt-14 text-center">
-        <button className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition">
-          ফ্রি ক্লাস বুক করুন →
-        </button>
-      </div>
-    </section>
+              <p className="mt-3 text-center text-sm text-gray-200">
+                {item.subtitle}
+              </p>
+
+              {item.badge && (
+                <div className="mt-3 flex justify-center">
+                  <span className="text-xs bg-red-600 text-white px-3 py-1 rounded-full">
+                    {item.badge}
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Button */}
+        <div className="mt-14 text-center">
+          <button className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition">
+            ফ্রি ক্লাস বুক করুন →
+          </button>
+        </div>
+      </section>
+      <section className="relative bg-black py-20 overflow-hidden">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h1 className="text-4xl md:text-5xl font-bold text-white">
+            শেখা হোক <span className="text-orange-400">আনন্দে!</span>
+          </h1>
+          <p className="mt-3 text-gray-300">
+            এক জায়গায় স্কুল ও কলেজের সম্পূর্ণ প্রস্তুতি!
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4">
+          {programs.map((item, index) => (
+            <div
+              key={index}
+              className="bg-zinc-900 cursor-pointer border border-zinc-700 rounded-2xl p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <div
+                className={`h-32 rounded-xl flex flex-col items-center justify-center bg-gradient-to-br ${item.gradient}`}
+              >
+                <span className="text-3xl">{item.emoji}</span>
+                <h3 className="mt-2 text-lg font-bold text-white">
+                  {item.title}
+                </h3>
+              </div>
+
+              <p className="mt-3 text-center text-sm text-gray-200">
+                {item.subtitle}
+              </p>
+
+              {item.badge && (
+                <div className="mt-3 flex justify-center">
+                  <span className="text-xs bg-red-600 text-white px-3 py-1 rounded-full">
+                    {item.badge}
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Button */}
+        <div className="mt-14 text-center">
+          <button className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition">
+            ফ্রি ক্লাস বুক করুন →
+          </button>
+        </div>
+      </section>
+
+
+      {/* You can open the modal using document.getElementById('ID').showModal() method */}
+      
+      <dialog id="my_modal_3" className="modal modal-middle">
+        <div className="modal-box">
+          <form method="dialog">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn cursor-pointer btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+        </div>
+      </dialog>
+    </div>
   );
 }
-

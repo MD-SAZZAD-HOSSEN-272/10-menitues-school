@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const TrySomethink = () => {
 
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('car')
     const handleSelection = (item) => {
         console.log(item);
         setSelected(item)
