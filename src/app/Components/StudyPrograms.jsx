@@ -1,5 +1,8 @@
-
 "use client";
+
+import { useState } from "react";
+import HSC26Modal from "./modalComponets/HSC2026Data";
+import HSC27Modal from "./modalComponets/HSC2027Data";
 
 const programs = [
   {
@@ -44,8 +47,21 @@ const programs = [
 ];
 
 export default function StudyPrograms() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [courseYear, setCourseYear] = useState(null)
+
+  const handleModal = (index) => {
+    setModalOpen(true);
+    setCourseYear(index);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false)
+  }
+  console.log(modalOpen);
+
   return (
-    <div>
+    <div className="relative">
       <section className="relative bg-black py-20 overflow-hidden">
         {/* Header */}
         <div className="text-center mb-14">
@@ -61,7 +77,7 @@ export default function StudyPrograms() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4">
           {programs.map((item, index) => (
             <div
-            onClick={() => document.getElementById("my_modal_3").showModal()}
+              onClick={() => handleModal(index)}
               key={index}
               className="bg-zinc-900 cursor-pointer border border-zinc-700 rounded-2xl p-4 hover:scale-105 transition-transform duration-300"
             >
@@ -145,22 +161,17 @@ export default function StudyPrograms() {
           </button>
         </div>
       </section>
-
 
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
-      
-      <dialog id="my_modal_3" className="modal modal-middle">
-        <div className="modal-box">
-          <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
-            <button className="btn cursor-pointer btn-sm btn-circle btn-ghost absolute right-2 top-2">
-              ✕
-            </button>
-          </form>
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+
+      {modalOpen ? (
+        <div className=" w-[50%] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-10 rounded-xl">
+          {courseYear == 0 ? <HSC26Modal onClose={() => handleModalClose()}></HSC26Modal> : ''}
+          {courseYear > 0 ? <HSC27Modal onClose={() => handleModalClose()}></HSC27Modal> : ''}
         </div>
-      </dialog>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
