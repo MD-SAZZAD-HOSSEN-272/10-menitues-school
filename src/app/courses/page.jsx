@@ -39,7 +39,7 @@ export default function CourseBundle() {
     const [images, setImages] = useState('/assets/img4.jfif')
 
     const handleImages = (img) => {
-        console.log(img);
+        setImages('')
         setImages(img)
     }
 
