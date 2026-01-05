@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const courses = [
   {
@@ -80,9 +81,9 @@ export default function HSC26Modal({ onClose }) {
                   {course.classes}
                 </p>
 
-                <button className="mt-3 text-sm font-semibold text-green-600">
+                <Link href='courses' className="mt-3 text-sm font-semibold text-green-600">
                   বিস্তারিত →
-                </button>
+                </Link>
               </div>
             </div>
           ))}
